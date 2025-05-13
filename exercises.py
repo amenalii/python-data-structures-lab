@@ -24,8 +24,9 @@ def example_list_function():
 # Assign the second student’s name to a variable named first_student.
 # Assign the last student’s name to a variable named last_student.
 
+students = ['Amen', 'Ali', 'Sara']
+
 def manage_students():
-    students = ['Amen', 'Ali', 'Sara']
     first_student = students[1]
     last_student = students[-1]
     return (first_student, last_student)
@@ -74,16 +75,59 @@ print('Exercise 3:', slice_foods())
 # Create a dictionary named home_town containing the keys of city, state, and population.
 # Using the home_town dictionary, assign to a variable named home_town_message a string with this format: “I was born in <city>, <state> - population of <population>”
 
-def hometown_info():
-    # your code here
-    home_town = {
-        'city': 'Dix Hills',
-        'state': 'New York',
-        'population': 25042
-    }
+home_town = {
+    'city': 'Dix Hills',
+    'state': 'New York',
+    'population': 25042
+}
 
+def hometown_info():
     home_town_message = (f"I was born in {home_town['city']}, {home_town['state']} - population of {home_town['population']}")
     return home_town_message
 
 # Call the function and print the result
 print('Exercise 4:', hometown_info())
+
+''' -------------------------------------------------- Exercise 5 --------------------------------------------------'''
+# Exercise 5: Iterating Over Dictionary Items
+#
+# Define an empty list named home_town_items.
+# Use a for loop to iterate over the key: value pairs in the home_town dictionary and append a string with the following format to home_town_items: "<key> = <value>"
+
+def list_home_town_items():
+    home_town_items = []
+    for key, val in home_town.items():
+        home_town_items.append(f"{key} = {val}")
+    return home_town_items
+   
+
+# Call the function and print the result
+print('Exercise 5:', list_home_town_items())
+
+''' -------------------------------------------------- Exercise 6 --------------------------------------------------'''
+# Exercise 6: Celebrate Students
+#
+# Using the list of students and a list comprehension, assign to a variable named awesome_students a new list containing strings.
+# For example: ["Tina is awesome!", "Fred is awesome!", "Wilma is awesome!"]
+
+def create_awesome_students():
+    # [<expression> for <item> in <list>]
+    awesome_students = [f"{student} is awesome!" for student in students]
+    return awesome_students
+
+# Call the function and print the result
+print('Exercise 6:', create_awesome_students())
+
+''' -------------------------------------------------- Exercise 7 --------------------------------------------------'''
+# Exercise 7: Filter Foods
+#
+# Assign to a variable named foods_with_an_a the result of list comprehension that filters the foods tuple to only include food strings that contain the letter 'a'.
+# For example, if foods is a tuple of ('Taco', 'Burrito', 'Sandwich'), foods_with_an_a would be a list equal to ['Taco', 'Sandwich']
+
+def filter_foods_with_a():
+    # [<expression> for <item> in <list> if <condition>]
+    foods_with_an_a = [f"{food}" for food in foods if 'a' in food]
+    return foods_with_an_a
+
+# Call the function and print the result
+print('Exercise 7:', filter_foods_with_a())
